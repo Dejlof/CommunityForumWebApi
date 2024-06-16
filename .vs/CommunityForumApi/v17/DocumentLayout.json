@@ -3,12 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\DEJI\\source\\repos\\CommunityForumApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5794C0E1-5788-4F92-A4CF-F2BBC1E6FEF4}|CommunityForumApi\\CommunityForumApi.csproj|c:\\users\\deji\\source\\repos\\communityforumapi\\communityforumapi\\repository\\postrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5794C0E1-5788-4F92-A4CF-F2BBC1E6FEF4}|CommunityForumApi\\CommunityForumApi.csproj|solutionrelative:communityforumapi\\repository\\postrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5794C0E1-5788-4F92-A4CF-F2BBC1E6FEF4}|CommunityForumApi\\CommunityForumApi.csproj|c:\\users\\deji\\source\\repos\\communityforumapi\\communityforumapi\\controllers\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5794C0E1-5788-4F92-A4CF-F2BBC1E6FEF4}|CommunityForumApi\\CommunityForumApi.csproj|solutionrelative:communityforumapi\\controllers\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5794C0E1-5788-4F92-A4CF-F2BBC1E6FEF4}|CommunityForumApi\\CommunityForumApi.csproj|c:\\users\\deji\\source\\repos\\communityforumapi\\communityforumapi\\mappers\\postmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5794C0E1-5788-4F92-A4CF-F2BBC1E6FEF4}|CommunityForumApi\\CommunityForumApi.csproj|solutionrelative:communityforumapi\\mappers\\postmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5794C0E1-5788-4F92-A4CF-F2BBC1E6FEF4}|CommunityForumApi\\CommunityForumApi.csproj|c:\\users\\deji\\source\\repos\\communityforumapi\\communityforumapi\\mappers\\commentmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5794C0E1-5788-4F92-A4CF-F2BBC1E6FEF4}|CommunityForumApi\\CommunityForumApi.csproj|solutionrelative:communityforumapi\\mappers\\commentmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5794C0E1-5788-4F92-A4CF-F2BBC1E6FEF4}|CommunityForumApi\\CommunityForumApi.csproj|c:\\users\\deji\\source\\repos\\communityforumapi\\communityforumapi\\interface\\ipostrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5794C0E1-5788-4F92-A4CF-F2BBC1E6FEF4}|CommunityForumApi\\CommunityForumApi.csproj|solutionrelative:communityforumapi\\interface\\ipostrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5794C0E1-5788-4F92-A4CF-F2BBC1E6FEF4}|CommunityForumApi\\CommunityForumApi.csproj|c:\\users\\deji\\source\\repos\\communityforumapi\\communityforumapi\\repository\\postrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5794C0E1-5788-4F92-A4CF-F2BBC1E6FEF4}|CommunityForumApi\\CommunityForumApi.csproj|solutionrelative:communityforumapi\\repository\\postrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5794C0E1-5788-4F92-A4CF-F2BBC1E6FEF4}|CommunityForumApi\\CommunityForumApi.csproj|c:\\users\\deji\\source\\repos\\communityforumapi\\communityforumapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5794C0E1-5788-4F92-A4CF-F2BBC1E6FEF4}|CommunityForumApi\\CommunityForumApi.csproj|solutionrelative:communityforumapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5794C0E1-5788-4F92-A4CF-F2BBC1E6FEF4}|CommunityForumApi\\CommunityForumApi.csproj|c:\\users\\deji\\source\\repos\\communityforumapi\\communityforumapi\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,16 +35,8 @@
       "RelativeMoniker": "D:0:0:{5794C0E1-5788-4F92-A4CF-F2BBC1E6FEF4}|CommunityForumApi\\CommunityForumApi.csproj|solutionrelative:communityforumapi\\communityforumapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5794C0E1-5788-4F92-A4CF-F2BBC1E6FEF4}|CommunityForumApi\\CommunityForumApi.csproj|c:\\users\\deji\\source\\repos\\communityforumapi\\communityforumapi\\mappers\\commentmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5794C0E1-5788-4F92-A4CF-F2BBC1E6FEF4}|CommunityForumApi\\CommunityForumApi.csproj|solutionrelative:communityforumapi\\mappers\\commentmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5794C0E1-5788-4F92-A4CF-F2BBC1E6FEF4}|CommunityForumApi\\CommunityForumApi.csproj|c:\\users\\deji\\source\\repos\\communityforumapi\\communityforumapi\\dtos\\comment\\createcommentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5794C0E1-5788-4F92-A4CF-F2BBC1E6FEF4}|CommunityForumApi\\CommunityForumApi.csproj|solutionrelative:communityforumapi\\dtos\\comment\\createcommentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5794C0E1-5788-4F92-A4CF-F2BBC1E6FEF4}|CommunityForumApi\\CommunityForumApi.csproj|c:\\users\\deji\\source\\repos\\communityforumapi\\communityforumapi\\mappers\\postmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5794C0E1-5788-4F92-A4CF-F2BBC1E6FEF4}|CommunityForumApi\\CommunityForumApi.csproj|solutionrelative:communityforumapi\\mappers\\postmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5794C0E1-5788-4F92-A4CF-F2BBC1E6FEF4}|CommunityForumApi\\CommunityForumApi.csproj|c:\\users\\deji\\source\\repos\\communityforumapi\\communityforumapi\\models\\post.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -63,10 +71,6 @@
       "RelativeMoniker": "D:0:0:{5794C0E1-5788-4F92-A4CF-F2BBC1E6FEF4}|CommunityForumApi\\CommunityForumApi.csproj|solutionrelative:communityforumapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5794C0E1-5788-4F92-A4CF-F2BBC1E6FEF4}|CommunityForumApi\\CommunityForumApi.csproj|c:\\users\\deji\\source\\repos\\communityforumapi\\communityforumapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5794C0E1-5788-4F92-A4CF-F2BBC1E6FEF4}|CommunityForumApi\\CommunityForumApi.csproj|solutionrelative:communityforumapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5794C0E1-5788-4F92-A4CF-F2BBC1E6FEF4}|CommunityForumApi\\CommunityForumApi.csproj|c:\\users\\deji\\source\\repos\\communityforumapi\\communityforumapi\\migrations\\20240616094858_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5794C0E1-5788-4F92-A4CF-F2BBC1E6FEF4}|CommunityForumApi\\CommunityForumApi.csproj|solutionrelative:communityforumapi\\migrations\\20240616094858_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -87,19 +91,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "PostController.cs",
+              "DocumentMoniker": "C:\\Users\\DEJI\\source\\repos\\CommunityForumApi\\CommunityForumApi\\Controllers\\PostController.cs",
+              "RelativeDocumentMoniker": "CommunityForumApi\\Controllers\\PostController.cs",
+              "ToolTip": "C:\\Users\\DEJI\\source\\repos\\CommunityForumApi\\CommunityForumApi\\Controllers\\PostController.cs",
+              "RelativeToolTip": "CommunityForumApi\\Controllers\\PostController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAF8AAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T13:05:18.48Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "PostRepository.cs",
               "DocumentMoniker": "C:\\Users\\DEJI\\source\\repos\\CommunityForumApi\\CommunityForumApi\\Repository\\PostRepository.cs",
               "RelativeDocumentMoniker": "CommunityForumApi\\Repository\\PostRepository.cs",
               "ToolTip": "C:\\Users\\DEJI\\source\\repos\\CommunityForumApi\\CommunityForumApi\\Repository\\PostRepository.cs",
               "RelativeToolTip": "CommunityForumApi\\Repository\\PostRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAD0AAAAuAAAA",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwCQAAAA4AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-16T12:38:22.146Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "IPostRepository.cs",
               "DocumentMoniker": "C:\\Users\\DEJI\\source\\repos\\CommunityForumApi\\CommunityForumApi\\Interface\\IPostRepository.cs",
               "RelativeDocumentMoniker": "CommunityForumApi\\Interface\\IPostRepository.cs",
@@ -112,7 +129,45 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
+              "Title": "Post.cs",
+              "DocumentMoniker": "C:\\Users\\DEJI\\source\\repos\\CommunityForumApi\\CommunityForumApi\\Models\\Post.cs",
+              "RelativeDocumentMoniker": "CommunityForumApi\\Models\\Post.cs",
+              "ToolTip": "C:\\Users\\DEJI\\source\\repos\\CommunityForumApi\\CommunityForumApi\\Models\\Post.cs",
+              "RelativeToolTip": "CommunityForumApi\\Models\\Post.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T08:57:14.657Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\DEJI\\source\\repos\\CommunityForumApi\\CommunityForumApi\\Program.cs",
+              "RelativeDocumentMoniker": "CommunityForumApi\\Program.cs",
+              "ToolTip": "C:\\Users\\DEJI\\source\\repos\\CommunityForumApi\\CommunityForumApi\\Program.cs",
+              "RelativeToolTip": "CommunityForumApi\\Program.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAAA8AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T09:30:19.681Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PostMapper.cs",
+              "DocumentMoniker": "C:\\Users\\DEJI\\source\\repos\\CommunityForumApi\\CommunityForumApi\\Mappers\\PostMapper.cs",
+              "RelativeDocumentMoniker": "CommunityForumApi\\Mappers\\PostMapper.cs",
+              "ToolTip": "C:\\Users\\DEJI\\source\\repos\\CommunityForumApi\\CommunityForumApi\\Mappers\\PostMapper.cs",
+              "RelativeToolTip": "CommunityForumApi\\Mappers\\PostMapper.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAowB0AAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T12:11:21.62Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "CommentMapper.cs",
               "DocumentMoniker": "C:\\Users\\DEJI\\source\\repos\\CommunityForumApi\\CommunityForumApi\\Mappers\\CommentMapper.cs",
               "RelativeDocumentMoniker": "CommunityForumApi\\Mappers\\CommentMapper.cs",
@@ -125,7 +180,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "CreatePostDto.cs",
               "DocumentMoniker": "C:\\Users\\DEJI\\source\\repos\\CommunityForumApi\\CommunityForumApi\\Dtos\\Post\\CreatePostDto.cs",
               "RelativeDocumentMoniker": "CommunityForumApi\\Dtos\\Post\\CreatePostDto.cs",
@@ -137,19 +192,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Post.cs",
-              "DocumentMoniker": "C:\\Users\\DEJI\\source\\repos\\CommunityForumApi\\CommunityForumApi\\Models\\Post.cs",
-              "RelativeDocumentMoniker": "CommunityForumApi\\Models\\Post.cs",
-              "ToolTip": "C:\\Users\\DEJI\\source\\repos\\CommunityForumApi\\CommunityForumApi\\Models\\Post.cs",
-              "RelativeToolTip": "CommunityForumApi\\Models\\Post.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-16T08:57:14.657Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\DEJI\\source\\repos\\CommunityForumApi\\CommunityForumApi\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "CommunityForumApi\\Data\\ApplicationDbContext.cs",
@@ -157,12 +200,11 @@
               "RelativeToolTip": "CommunityForumApi\\Data\\ApplicationDbContext.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-16T09:26:58.291Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-16T09:26:58.291Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "20240616115646_comment-model.cs",
               "DocumentMoniker": "C:\\Users\\DEJI\\source\\repos\\CommunityForumApi\\CommunityForumApi\\Migrations\\20240616115646_comment-model.cs",
               "RelativeDocumentMoniker": "CommunityForumApi\\Migrations\\20240616115646_comment-model.cs",
@@ -174,7 +216,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "CommunityForumApi.csproj",
               "DocumentMoniker": "C:\\Users\\DEJI\\source\\repos\\CommunityForumApi\\CommunityForumApi\\CommunityForumApi.csproj",
               "RelativeDocumentMoniker": "CommunityForumApi\\CommunityForumApi.csproj",
@@ -182,24 +224,11 @@
               "RelativeToolTip": "CommunityForumApi\\CommunityForumApi.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-06-16T08:56:26.59Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-16T08:56:26.59Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PostMapper.cs",
-              "DocumentMoniker": "C:\\Users\\DEJI\\source\\repos\\CommunityForumApi\\CommunityForumApi\\Mappers\\PostMapper.cs",
-              "RelativeDocumentMoniker": "CommunityForumApi\\Mappers\\PostMapper.cs",
-              "ToolTip": "C:\\Users\\DEJI\\source\\repos\\CommunityForumApi\\CommunityForumApi\\Mappers\\PostMapper.cs",
-              "RelativeToolTip": "CommunityForumApi\\Mappers\\PostMapper.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAowCMAAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-16T12:11:21.62Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "CreateCommentDto.cs",
               "DocumentMoniker": "C:\\Users\\DEJI\\source\\repos\\CommunityForumApi\\CommunityForumApi\\Dtos\\Comment\\CreateCommentDto.cs",
               "RelativeDocumentMoniker": "CommunityForumApi\\Dtos\\Comment\\CreateCommentDto.cs",
@@ -211,7 +240,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "CommentDto.cs",
               "DocumentMoniker": "C:\\Users\\DEJI\\source\\repos\\CommunityForumApi\\CommunityForumApi\\Dtos\\Comment\\CommentDto.cs",
               "RelativeDocumentMoniker": "CommunityForumApi\\Dtos\\Comment\\CommentDto.cs",
@@ -223,7 +252,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "Comment.cs",
               "DocumentMoniker": "C:\\Users\\DEJI\\source\\repos\\CommunityForumApi\\CommunityForumApi\\Models\\Comment.cs",
               "RelativeDocumentMoniker": "CommunityForumApi\\Models\\Comment.cs",
@@ -235,7 +264,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "UpdateCommentDto.cs",
               "DocumentMoniker": "C:\\Users\\DEJI\\source\\repos\\CommunityForumApi\\CommunityForumApi\\Dtos\\Comment\\UpdateCommentDto.cs",
               "RelativeDocumentMoniker": "CommunityForumApi\\Dtos\\Comment\\UpdateCommentDto.cs",
@@ -247,7 +276,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "PostDto.cs",
               "DocumentMoniker": "C:\\Users\\DEJI\\source\\repos\\CommunityForumApi\\CommunityForumApi\\Dtos\\Post\\PostDto.cs",
               "RelativeDocumentMoniker": "CommunityForumApi\\Dtos\\Post\\PostDto.cs",
@@ -259,19 +288,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\DEJI\\source\\repos\\CommunityForumApi\\CommunityForumApi\\Program.cs",
-              "RelativeDocumentMoniker": "CommunityForumApi\\Program.cs",
-              "ToolTip": "C:\\Users\\DEJI\\source\\repos\\CommunityForumApi\\CommunityForumApi\\Program.cs",
-              "RelativeToolTip": "CommunityForumApi\\Program.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA0AAABVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-16T09:30:19.681Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "20240616094858_InitialCreate.cs",
               "DocumentMoniker": "C:\\Users\\DEJI\\source\\repos\\CommunityForumApi\\CommunityForumApi\\Migrations\\20240616094858_InitialCreate.cs",
               "RelativeDocumentMoniker": "CommunityForumApi\\Migrations\\20240616094858_InitialCreate.cs",
@@ -283,7 +300,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "UpdatePostDto.cs",
               "DocumentMoniker": "C:\\Users\\DEJI\\source\\repos\\CommunityForumApi\\CommunityForumApi\\Dtos\\Post\\UpdatePostDto.cs",
               "RelativeDocumentMoniker": "CommunityForumApi\\Dtos\\Post\\UpdatePostDto.cs",
@@ -295,7 +312,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\DEJI\\source\\repos\\CommunityForumApi\\CommunityForumApi\\appsettings.json",
               "RelativeDocumentMoniker": "CommunityForumApi\\appsettings.json",

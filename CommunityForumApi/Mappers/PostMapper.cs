@@ -27,7 +27,7 @@ namespace CommunityForumApi.Mappers
             };
         }
 
-        public static Post ToPostFromUpdateD (this UpdatePostDto updateStockModel)
+        public static Post ToPostFromUpdateDto (this UpdatePostDto updateStockModel)
         {
             return new Post
             {
