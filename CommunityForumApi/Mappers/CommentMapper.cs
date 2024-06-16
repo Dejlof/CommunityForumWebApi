@@ -16,11 +16,12 @@ namespace CommunityForumApi.Mappers
             };
         }
 
-        public static Comment ToCreateFromCommentDto (this CreateCommentDto createCommentModel)
+        public static Comment ToCreateFromCommentDto (this CreateCommentDto createCommentModel, int postId)
         {
             return new Comment
             {
                 Content = createCommentModel.Content,
+                PostId = postId
             };
         }
 

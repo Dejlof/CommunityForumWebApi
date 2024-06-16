@@ -46,7 +46,10 @@ namespace CommunityForumApi.Repository
             
         }
 
-       
+        public async Task<bool> PostExists(int id)
+        {
+            return await _context.Posts.AnyAsync(c=>c.Id == id);
+        }
 
         public async Task<Post?> UpdatePostAsync(int id, UpdatePostDto updateDto)
         {

@@ -17,6 +17,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 builder.Services.AddScoped<IPostRepository, PostRepository>();
+builder.Services.AddScoped<IcommentRepository, CommentRepository>();
 
 
 var app = builder.Build();

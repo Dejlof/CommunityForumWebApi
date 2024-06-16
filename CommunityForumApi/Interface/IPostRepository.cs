@@ -13,5 +13,7 @@ namespace CommunityForumApi.Interface
 
         Task<Post?> UpdatePostAsync(int id, UpdatePostDto updateDto);
         Task<Post?> DeletePostAsync(int id);
+
+        Task<bool> PostExists(int id);
     }
 }
