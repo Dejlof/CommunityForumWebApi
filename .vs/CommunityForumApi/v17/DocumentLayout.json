@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\DEJI\\source\\repos\\CommunityForumApi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5794C0E1-5788-4F92-A4CF-F2BBC1E6FEF4}|CommunityForumApi\\CommunityForumApi.csproj|c:\\users\\deji\\source\\repos\\communityforumapi\\communityforumapi\\models\\post.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5794C0E1-5788-4F92-A4CF-F2BBC1E6FEF4}|CommunityForumApi\\CommunityForumApi.csproj|solutionrelative:communityforumapi\\models\\post.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5794C0E1-5788-4F92-A4CF-F2BBC1E6FEF4}|CommunityForumApi\\CommunityForumApi.csproj|c:\\users\\deji\\source\\repos\\communityforumapi\\communityforumapi\\communityforumapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{5794C0E1-5788-4F92-A4CF-F2BBC1E6FEF4}|CommunityForumApi\\CommunityForumApi.csproj|solutionrelative:communityforumapi\\communityforumapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Post.cs",
+              "DocumentMoniker": "C:\\Users\\DEJI\\source\\repos\\CommunityForumApi\\CommunityForumApi\\Models\\Post.cs",
+              "RelativeDocumentMoniker": "CommunityForumApi\\Models\\Post.cs",
+              "ToolTip": "C:\\Users\\DEJI\\source\\repos\\CommunityForumApi\\CommunityForumApi\\Models\\Post.cs",
+              "RelativeToolTip": "CommunityForumApi\\Models\\Post.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAABRAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T08:57:14.657Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CommunityForumApi",
+              "DocumentMoniker": "C:\\Users\\DEJI\\source\\repos\\CommunityForumApi\\CommunityForumApi\\CommunityForumApi.csproj",
+              "RelativeDocumentMoniker": "CommunityForumApi\\CommunityForumApi.csproj",
+              "ToolTip": "C:\\Users\\DEJI\\source\\repos\\CommunityForumApi\\CommunityForumApi\\CommunityForumApi.csproj",
+              "RelativeToolTip": "CommunityForumApi\\CommunityForumApi.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-06-16T08:56:26.59Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
