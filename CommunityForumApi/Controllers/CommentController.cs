@@ -96,7 +96,7 @@ namespace CommunityForumApi.Controllers
                 return NotFound();
             }
 
-            return Ok("Comment deleted sucessfully");
+            return Ok("Comment deleted sucessfuly");
         }
        
 
