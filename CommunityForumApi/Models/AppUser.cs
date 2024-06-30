@@ -1,11 +1,9 @@
-﻿
-using Microsoft.AspNetCore.Identity;
-
+﻿using Microsoft.AspNetCore.Identity;
 
 namespace CommunityForumApi.Models
 {
-    public class AppUser:IdentityUser
+    public class AppUser : IdentityUser
     {
-
+        
     }
 }
