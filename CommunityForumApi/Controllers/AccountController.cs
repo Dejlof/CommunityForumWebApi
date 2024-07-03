@@ -1,11 +1,8 @@
 ﻿using CommunityForumApi.Dtos.Account;
 using CommunityForumApi.Models;
-using CommunityForumApi.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
-using System.Data.Entity;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace CommunityForumApi.Controllers
 {
@@ -19,6 +16,31 @@ namespace CommunityForumApi.Controllers
         {
             _userManager = userManager;
         }
+
+        [HttpGet]
+        public async Task <IActionResult> GetAll ()
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+          var users = await _userManager.Users.Select(u=> new UserDto
+          {
+              Id = u.Id,
+              Username = u.UserName,
+              EmailAddress = u.Email,
+              PhoneNumber = u.PhoneNumber,
+          }).ToListAsync();
+
+            return Ok(users);
+
+        }
+
+
+
+
+
 
 
         [HttpPost("Register")]
