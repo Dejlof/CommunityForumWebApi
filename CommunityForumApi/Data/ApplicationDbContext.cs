@@ -21,6 +21,10 @@ namespace CommunityForumApi.Data
         {
             base.OnModelCreating(builder);
 
+            builder.Entity<AppUser>()
+              .HasIndex(u => u.PhoneNumber)
+              .IsUnique();
+
             List<IdentityRole> roles = new List<IdentityRole>
             {
                 new IdentityRole

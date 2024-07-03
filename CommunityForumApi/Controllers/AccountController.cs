@@ -3,6 +3,8 @@ using CommunityForumApi.Models;
 using CommunityForumApi.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using System.Data.Entity;
 using System.Threading.Tasks;
 
 namespace CommunityForumApi.Controllers
@@ -28,12 +30,35 @@ namespace CommunityForumApi.Controllers
                 {
                     return BadRequest(ModelState);
                 }
+
+                var existingUser = await _userManager.FindByNameAsync(registerDto.Username);
+                if (existingUser != null) 
+                {
+                    return BadRequest("User already exists");
+                }
+
+                var existingEmail = await _userManager.FindByEmailAsync(registerDto.EmailAddress);
+                if (existingEmail != null)
+                {
+                    return BadRequest("Email already exists");
+                }
+                
+                var existingPhone = await _userManager.Users.AnyAsync(u=>u.PhoneNumber == registerDto.PhoneNumber);
+
+                if (existingPhone != null)
+                {
+                    return BadRequest("PhoneNumber already in use");
+                }
+
+
                 var appUser = new AppUser
                 {
                     UserName = registerDto.Username,
                     Email = registerDto.EmailAddress,
                     PhoneNumber = registerDto.PhoneNumber,
                 };
+
+              
 
                 var createUser = await _userManager.CreateAsync(appUser, registerDto.Password);
 
@@ -60,5 +85,28 @@ namespace CommunityForumApi.Controllers
                 return StatusCode (500, ex.Message);    
             }
         }
+        [HttpDelete("Delete")]
+        public async Task<IActionResult> Delete( string user)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var deletedUser = await _userManager.FindByNameAsync(user); 
+
+            if (deletedUser == null)
+            {
+                return NotFound($"{user} not found");
+            }
+
+            await _userManager.DeleteAsync(deletedUser);
+          
+          
+
+            return Ok($"{deletedUser} has been deleted");
+
+        }
     }
+   
 }
