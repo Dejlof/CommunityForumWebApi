@@ -2,6 +2,7 @@ using CommunityForumApi.Data;
 using CommunityForumApi.Interface;
 using CommunityForumApi.Models;
 using CommunityForumApi.Repository;
+using CommunityForumApi.Service;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -22,6 +23,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 });
 builder.Services.AddScoped<IPostRepository, PostRepository>();
 builder.Services.AddScoped<IcommentRepository, CommentRepository>();
+builder.Services.AddScoped <ITokenService, TokenService>();
 
 builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
 {

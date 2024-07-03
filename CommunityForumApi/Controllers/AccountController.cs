@@ -1,4 +1,5 @@
 ﻿using CommunityForumApi.Dtos.Account;
+using CommunityForumApi.Interface;
 using CommunityForumApi.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -11,10 +12,12 @@ namespace CommunityForumApi.Controllers
     public class AccountController : ControllerBase
     {
         private readonly UserManager<AppUser> _userManager;
+        private readonly ITokenService _tokenService;
 
-        public AccountController(UserManager<AppUser> userManager)
+        public AccountController(UserManager<AppUser> userManager, ITokenService tokenService)
         {
             _userManager = userManager;
+            _tokenService = tokenService;
         }
 
         [HttpGet]
@@ -65,7 +68,7 @@ namespace CommunityForumApi.Controllers
                     return BadRequest("Email already exists");
                 }
                 
-                var existingPhone = await _userManager.Users.AnyAsync(u=>u.PhoneNumber == registerDto.PhoneNumber);
+                var existingPhone = await _userManager.Users.FirstOrDefaultAsync(u=>u.PhoneNumber == registerDto.PhoneNumber);
 
                 if (existingPhone != null)
                 {
@@ -90,7 +93,13 @@ namespace CommunityForumApi.Controllers
 
                     if (assignRole.Succeeded) 
                     {
-                        return Ok("User created");
+                        return Ok(new NewUserDto
+                        {
+                            Username = registerDto.Username,
+                            EmailAddress = registerDto.EmailAddress,
+                            PhoneNumber = registerDto.PhoneNumber,
+                            Token = _tokenService.CreateToken(appUser)
+                        });
                     }
                     else
                     {
