@@ -4,6 +4,7 @@ using CommunityForumApi.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 
 namespace CommunityForumApi.Controllers
 {
@@ -13,11 +14,13 @@ namespace CommunityForumApi.Controllers
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly ITokenService _tokenService;
+        private readonly SignInManager<AppUser> _signInManager;
 
-        public AccountController(UserManager<AppUser> userManager, ITokenService tokenService)
+        public AccountController(UserManager<AppUser> userManager, ITokenService tokenService, SignInManager<AppUser> signInManager)
         {
             _userManager = userManager;
             _tokenService = tokenService;
+            _signInManager = signInManager;
         }
 
         [HttpGet]
@@ -41,8 +44,42 @@ namespace CommunityForumApi.Controllers
         }
 
 
+        [HttpPost("Login")]
+        public async Task<IActionResult> Login([FromBody] LoginDto loginDto)
+        {
+            if (!ModelState.IsValid) 
+            {
+                return BadRequest(ModelState);
+            }
 
+            var user = await _userManager.FindByNameAsync(loginDto.Login);
 
+            if (user == null && new EmailAddressAttribute().IsValid(loginDto.Login)) 
+            {
+                user = await _userManager.FindByEmailAsync(loginDto.Login);
+            }
+
+            if (user == null && new PhoneAttribute().IsValid(loginDto.Login)) 
+            { 
+                user = await _userManager.Users.FirstOrDefaultAsync(u=> u.PhoneNumber == loginDto.Login);
+            }
+
+            if (user == null)
+            {
+                return Unauthorized("Invalid login attempt.");
+            }
+
+            var verifiedUser = await _signInManager.CheckPasswordSignInAsync(user, loginDto.Password, false);
+
+            if (!verifiedUser.Succeeded) 
+            { 
+                return Unauthorized("Username/Password incorrect");
+            }
+
+            var Token = _tokenService.CreateToken(user);
+
+            return Ok(Token);
+        }
 
 
 
