@@ -29,16 +29,46 @@ namespace CommunityForumApi.Data
             {
                 new IdentityRole
                 {
+                    Id = "1",
                     Name = "Admin",
                     NormalizedName = "ADMIN"
                 },
                 new IdentityRole
                 {
+                    Id ="2",
                     Name = "User",
                     NormalizedName = "USER"
                 }
             };
+
+            var adminUser = new AppUser
+            {
+                Id = "1",
+                UserName = "dejlof",
+                NormalizedUserName = "DEJLOF",
+                Email = "dejlof@example.com",
+                NormalizedEmail = "DEJLOF@EXAMPLE.COM",
+                EmailConfirmed = true,
+                PhoneNumberConfirmed = true,
+                SecurityStamp = new Guid().ToString("D")
+            };
+
+
+            var passwordHasher = new PasswordHasher<AppUser>();
+            adminUser.PasswordHash = passwordHasher.HashPassword(adminUser, "Dejlof@87654321");
+
+
+
             builder.Entity<IdentityRole>().HasData(roles);
+            builder.Entity<AppUser>().HasData(adminUser);
+
+            var adminUserRole = new IdentityUserRole<string>
+            {
+                RoleId = "1",
+                UserId = "1",
+            };
+
+        builder.Entity<IdentityUserRole<string>>().HasData(adminUserRole);
         }
     }
 }

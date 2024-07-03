@@ -23,6 +23,7 @@ namespace CommunityForumApi.Controllers
             _signInManager = signInManager;
         }
 
+        
         [HttpGet]
         public async Task <IActionResult> GetAll ()
         {
