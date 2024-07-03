@@ -2,6 +2,7 @@
 using CommunityForumApi.Interface;
 using CommunityForumApi.Mappers;
 using CommunityForumApi.Repository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,6 +21,7 @@ namespace CommunityForumApi.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> GetAll()
         {
             var comments = await _commentRepository.GetAllAsync();
@@ -28,6 +30,7 @@ namespace CommunityForumApi.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<IActionResult> GetById(int id)
         {
             if (!ModelState.IsValid)
@@ -44,6 +47,7 @@ namespace CommunityForumApi.Controllers
         }
 
         [HttpPost("{postId:int}")]
+        [Authorize]
         public async Task<IActionResult> Create([FromRoute] int postId, [FromBody] CreateCommentDto comment)
         {
             if (!ModelState.IsValid)
@@ -65,6 +69,7 @@ namespace CommunityForumApi.Controllers
         }
 
         [HttpPut("{id:int}")]
+        [Authorize]
         public async Task<IActionResult> Update([FromRoute] int id, [FromBody] UpdateCommentDto comment)
         {
             if (!ModelState.IsValid)
@@ -84,6 +89,7 @@ namespace CommunityForumApi.Controllers
         }
 
         [HttpDelete("{id:int}")]
+        [Authorize]
         public async Task<IActionResult> Delete([FromRoute] int id) { 
             if (!ModelState.IsValid)
             {

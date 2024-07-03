@@ -1,6 +1,7 @@
 ﻿using CommunityForumApi.Dtos.Account;
 using CommunityForumApi.Interface;
 using CommunityForumApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -25,6 +26,7 @@ namespace CommunityForumApi.Controllers
 
         
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public async Task <IActionResult> GetAll ()
         {
             if (!ModelState.IsValid)
@@ -77,7 +79,7 @@ namespace CommunityForumApi.Controllers
                 return Unauthorized("Username/Password incorrect");
             }
 
-            var Token = _tokenService.CreateToken(user);
+            var Token = await _tokenService.CreateToken(user);
 
             return Ok(Token);
         }
@@ -136,7 +138,7 @@ namespace CommunityForumApi.Controllers
                             Username = registerDto.Username,
                             EmailAddress = registerDto.EmailAddress,
                             PhoneNumber = registerDto.PhoneNumber,
-                            Token = _tokenService.CreateToken(appUser)
+                            Token = await _tokenService.CreateToken(appUser)
                         });
                     }
                     else
@@ -154,7 +156,10 @@ namespace CommunityForumApi.Controllers
                 return StatusCode (500, ex.Message);    
             }
         }
+
+
         [HttpDelete("Delete")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete( string user)
         {
             if (!ModelState.IsValid)

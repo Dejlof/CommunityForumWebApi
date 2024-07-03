@@ -1,6 +1,7 @@
 ﻿using CommunityForumApi.Dtos.Post;
 using CommunityForumApi.Interface;
 using CommunityForumApi.Mappers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CommunityForumApi.Controllers
@@ -17,6 +18,7 @@ namespace CommunityForumApi.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> GetAllPosts()
         {
             if (!ModelState.IsValid)
@@ -30,6 +32,7 @@ namespace CommunityForumApi.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<IActionResult> GetPostById(int id)
         {
             if (!ModelState.IsValid)
@@ -48,6 +51,7 @@ namespace CommunityForumApi.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> CreatePost([FromBody] CreatePostDto postDto)
         {
             if (!ModelState.IsValid)
@@ -63,6 +67,7 @@ namespace CommunityForumApi.Controllers
 
 
         [HttpPut("{id:int}")]
+        [Authorize]
         public async Task <IActionResult> updatePost([FromRoute] int id, [FromBody] UpdatePostDto postDto)
         {
             if (!ModelState.IsValid)
@@ -80,6 +85,7 @@ namespace CommunityForumApi.Controllers
         }
 
         [HttpDelete("{id:int}")]
+        [Authorize]
         public async Task<IActionResult> deletePost([FromRoute] int id) 
         {
             if (!ModelState.IsValid)
