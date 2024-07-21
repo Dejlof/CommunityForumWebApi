@@ -1,7 +1,10 @@
 ﻿using CommunityForumApi.Dtos.Post;
+using CommunityForumApi.Extensions;
 using CommunityForumApi.Interface;
 using CommunityForumApi.Mappers;
+using CommunityForumApi.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CommunityForumApi.Controllers
@@ -11,10 +14,12 @@ namespace CommunityForumApi.Controllers
     public class PostController : ControllerBase
     {
         private readonly IPostRepository _postRepository;
+        private readonly UserManager<AppUser> _userManager;
 
-        public PostController(IPostRepository postRepository)
+        public PostController(IPostRepository postRepository, UserManager<AppUser> userManager)
         {
             _postRepository = postRepository;
+            _userManager = userManager;
         }
 
         [HttpGet]
@@ -58,8 +63,12 @@ namespace CommunityForumApi.Controllers
             {
                 return BadRequest(ModelState);
             }
+            var userName = User.GetUsername();
+            var appUser = await _userManager.FindByNameAsync(userName);
+
 
             var postModel = postDto.ToPostFromCreateDto();
+            postModel.AppUserId = appUser.Id;
 
             await _postRepository.CreatePostAsync(postModel);
             return CreatedAtAction(nameof(GetPostById), new { id = postModel.Id }, postModel.ToPostDto());

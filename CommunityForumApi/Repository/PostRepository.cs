@@ -23,7 +23,7 @@ namespace CommunityForumApi.Repository
 
         public async Task<Post?> DeletePostAsync(int id)
         {
-            var post = await _context.Posts.Include(s=> s.Comments).FirstOrDefaultAsync(x => x.Id == id);
+            var post = await _context.Posts.FirstOrDefaultAsync(x => x.Id == id);
             if (post == null) 
             {
                 return null;
@@ -36,13 +36,18 @@ namespace CommunityForumApi.Repository
 
         public async Task<List<Post>> GetAllPostsAsync()
         {
-          var posts = await _context.Posts.Include(s=> s.Comments).ToListAsync();
+          var posts = await _context.Posts.Include(s=> s.Comments).
+                ThenInclude(s=> s.AppUser)
+                .Include(s=>s.AppUser)
+                .ToListAsync();
             return posts;
         }
 
         public async Task<Post?> GetByIdAsync(int id)
         {
-          return await _context.Posts.Include(s=> s.Comments).FirstOrDefaultAsync(c=>c.Id == id);
+          return await _context.Posts.Include(s=> s.Comments).
+                ThenInclude(s => s.AppUser)
+                .Include(s => s.AppUser).FirstOrDefaultAsync(c=>c.Id == id);
             
         }
 

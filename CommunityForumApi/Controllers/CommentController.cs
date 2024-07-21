@@ -1,9 +1,12 @@
 ﻿using CommunityForumApi.Dtos.Comment;
+using CommunityForumApi.Extensions;
 using CommunityForumApi.Interface;
 using CommunityForumApi.Mappers;
+using CommunityForumApi.Models;
 using CommunityForumApi.Repository;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CommunityForumApi.Controllers
@@ -14,10 +17,13 @@ namespace CommunityForumApi.Controllers
     {
         private readonly IcommentRepository _commentRepository;
         private readonly IPostRepository _postRepository;
-        public CommentController(IcommentRepository commentRepository, IPostRepository postRepository)
+        private readonly UserManager<AppUser> _userManager;
+        public CommentController(IcommentRepository commentRepository, IPostRepository postRepository, UserManager<AppUser> userManager)
         {
             _commentRepository = commentRepository;
             _postRepository = postRepository;
+            _userManager = userManager;
+
         }
 
         [HttpGet]
@@ -60,7 +66,11 @@ namespace CommunityForumApi.Controllers
                 return BadRequest("Post does not exist");
             }
 
+            var userName = User.GetUsername();
+            var appUser = await _userManager.FindByNameAsync(userName); 
+
             var commentModel = comment.ToCreateFromCommentDto(postId);
+            commentModel.AppUserId = appUser.Id;
 
             await _commentRepository.CreateAsync(commentModel);
 
