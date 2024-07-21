@@ -13,6 +13,7 @@ namespace CommunityForumApi.Mappers
                 Title = postModel.Title,
                 Content = postModel.Content,
                 CreatedDate = postModel.CreatedDate,
+                CreatedBy = postModel.AppUser.UserName,
                 Comments = postModel.Comments.Select(c => c.ToCommentDto()).ToList()
 
             };

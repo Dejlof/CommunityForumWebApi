@@ -12,6 +12,7 @@ namespace CommunityForumApi.Mappers
                 Id = commentModel.Id,
                 Content = commentModel.Content,
                 CreatedDate = commentModel.CreatedDate,
+                CreatedBy = commentModel.AppUser.UserName,
                 PostId = commentModel.PostId,
             };
         }

@@ -95,13 +95,13 @@ namespace CommunityForumApi.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "06344ebe-09f7-4e3d-b408-53203adef4ee",
+                            ConcurrencyStamp = "8489d304-a049-4bdd-ac39-8ce3e3612478",
                             Email = "dejlof@example.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "DEJLOF@EXAMPLE.COM",
                             NormalizedUserName = "DEJLOF",
-                            PasswordHash = "AQAAAAIAAYagAAAAEKMe2IOOzc62srz0bpoabhe192YuP768CiJJmvOd5/1tCLJjRJgMz6D8a7XoqjfhiA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEMvNmOzaMXYGaXr8Ekyytxyp3bi//M34FIDd3kzE1rLhfnnFf1c4/pu1lLlXUdjhdw==",
                             PhoneNumberConfirmed = true,
                             SecurityStamp = "00000000-0000-0000-0000-000000000000",
                             TwoFactorEnabled = false,
@@ -117,7 +117,15 @@ namespace CommunityForumApi.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("AppUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CreatedBy")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -128,6 +136,8 @@ namespace CommunityForumApi.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
 
                     b.HasIndex("PostId");
 
@@ -142,7 +152,15 @@ namespace CommunityForumApi.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("AppUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CreatedBy")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -154,6 +172,8 @@ namespace CommunityForumApi.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
 
                     b.ToTable("Posts");
                 });
@@ -314,13 +334,32 @@ namespace CommunityForumApi.Migrations
 
             modelBuilder.Entity("CommunityForumApi.Models.Comment", b =>
                 {
+                    b.HasOne("CommunityForumApi.Models.AppUser", "AppUser")
+                        .WithMany("Comments")
+                        .HasForeignKey("AppUserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("CommunityForumApi.Models.Post", "Posts")
                         .WithMany("Comments")
                         .HasForeignKey("PostId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("AppUser");
+
                     b.Navigation("Posts");
+                });
+
+            modelBuilder.Entity("CommunityForumApi.Models.Post", b =>
+                {
+                    b.HasOne("CommunityForumApi.Models.AppUser", "AppUser")
+                        .WithMany("Posts")
+                        .HasForeignKey("AppUserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("AppUser");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -372,6 +411,13 @@ namespace CommunityForumApi.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("CommunityForumApi.Models.AppUser", b =>
+                {
+                    b.Navigation("Comments");
+
+                    b.Navigation("Posts");
                 });
 
             modelBuilder.Entity("CommunityForumApi.Models.Post", b =>

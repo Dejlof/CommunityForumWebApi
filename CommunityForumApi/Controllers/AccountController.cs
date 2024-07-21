@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CommunityForumApi.Controllers
 {
-    [Route("CommForum/account")]
+    [Route("CommForum/accounts")]
     [ApiController]
     public class AccountController : ControllerBase
     {
@@ -36,7 +36,6 @@ namespace CommunityForumApi.Controllers
 
           var users = await _userManager.Users.Select(u=> new UserDto
           {
-              Id = u.Id,
               Username = u.UserName,
               EmailAddress = u.Email,
               PhoneNumber = u.PhoneNumber,
@@ -45,6 +44,41 @@ namespace CommunityForumApi.Controllers
             return Ok(users);
 
         }
+
+
+        [HttpGet("Getbyuser")]
+        [Authorize]
+        public async Task<IActionResult> Get(string userName) 
+        {
+            if (!ModelState.IsValid) 
+            {
+                return BadRequest(ModelState);
+            }
+
+            var user = await _userManager.FindByNameAsync(userName);
+
+            if (user == null) 
+            { 
+                return NotFound("User not found");
+            }
+
+            var userDto = new UserDto
+            {
+             
+                Username = user.UserName,
+                EmailAddress = user.Email,
+                PhoneNumber = user.PhoneNumber,
+            };
+
+
+            return Ok(userDto);
+        }
+
+
+
+
+
+
 
 
         [HttpPost("Login")]

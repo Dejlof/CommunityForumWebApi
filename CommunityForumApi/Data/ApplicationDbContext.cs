@@ -25,6 +25,26 @@ namespace CommunityForumApi.Data
               .HasIndex(u => u.PhoneNumber)
               .IsUnique();
 
+            builder.Entity<AppUser>()
+                .HasMany(u => u.Posts)
+                .WithOne(p => p.AppUser)
+                .HasForeignKey(p => p.AppUserId)
+             .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<AppUser>()
+                .HasMany(u => u.Comments)
+                .WithOne(p => p.AppUser)
+                .HasForeignKey(p => p.AppUserId)
+             .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<Post>()
+                .HasMany(u => u.Comments)
+                .WithOne(p => p.Posts)
+                .HasForeignKey(p => p.PostId)
+                 .OnDelete(DeleteBehavior.Cascade);
+
+
+
             List<IdentityRole> roles = new List<IdentityRole>
             {
                 new IdentityRole
