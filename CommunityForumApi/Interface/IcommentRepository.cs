@@ -7,7 +7,7 @@ namespace CommunityForumApi.Interface
     {
         Task<List<Comment>> GetAllAsync();
 
-        Task<List<Comment>> GetMyCommentAsync(string userName);
+        Task<List<Comment>> GetUserCommentAsync(string userName);
 
         Task<Comment?> GetByIdAsync (int id);
 

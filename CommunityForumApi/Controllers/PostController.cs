@@ -37,7 +37,7 @@ namespace CommunityForumApi.Controllers
             return Ok(postDto);
         }
 
-        [HttpGet("current-user")]
+        [HttpGet("logggeduser")]
         [Authorize]
         public async Task <IActionResult> GetMyPost()
         {
@@ -47,14 +47,33 @@ namespace CommunityForumApi.Controllers
             { 
                 return Unauthorized();
             }
-            var posts = await _postRepository.GetMyPostsAsync(user);
+            var posts = await _postRepository.GetUserPostsAsync(user);
             var postDto = posts.Select(s => s.ToPostDto()).ToList();
             return Ok(postDto);
 
         }
 
+        [HttpGet("otherusers")]
+        [Authorize]
+        public async Task<IActionResult> GetUsersPost(string userName)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
+            var user = await _userManager.FindByNameAsync(userName);
 
+            if (user == null) 
+            { 
+                return NotFound($"{userName} not found");
+            }
+
+            var posts = await _postRepository.GetUserPostsAsync(userName);
+            var postDto = posts.Select(s => s.ToPostDto()).ToList();
+            return Ok(postDto);
+
+        }
 
 
 

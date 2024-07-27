@@ -48,7 +48,7 @@ namespace CommunityForumApi.Repository
             return await _context.Comments.Include(a=>a.Id).FirstOrDefaultAsync(c => c.Id == id);
         }
 
-        public async Task<List<Comment>> GetMyCommentAsync(string userName)
+        public async Task<List<Comment>> GetUserCommentAsync(string userName)
         {
             return await _context.Comments.Include(a=> a.AppUser).
                 Where(a=>a.AppUser.UserName == userName).

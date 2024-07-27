@@ -52,7 +52,7 @@ namespace CommunityForumApi.Repository
             
         }
 
-        public async Task<List<Post>> GetMyPostsAsync(string userName)
+        public async Task<List<Post>> GetUserPostsAsync(string userName)
         {
            return await _context.Posts.Include(s=> s.Comments).
                 ThenInclude(s=> s.AppUser).

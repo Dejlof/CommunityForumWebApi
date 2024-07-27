@@ -35,7 +35,7 @@ namespace CommunityForumApi.Controllers
             return Ok(commentDto);
         }
 
-        [HttpGet("currentuser")]
+        [HttpGet("loggeduser")]
         [Authorize]
         public async Task<IActionResult> GetMyComments() { 
             var user = User.GetUsername();
@@ -45,11 +45,32 @@ namespace CommunityForumApi.Controllers
                 return Unauthorized();
             }
 
-            var comments = await _commentRepository.GetMyCommentAsync(user);
+            var comments = await _commentRepository.GetUserCommentAsync(user);
             var commentDto = comments.Select(s=>s.ToCommentDto()).ToList(); 
             return Ok(commentDto);  
         }
 
+        [HttpGet("otherusers")]
+        [Authorize]
+
+        public async Task<IActionResult> GetUsersComments( string userName) 
+        {
+            if (!ModelState.IsValid) 
+            { 
+                return BadRequest(ModelState);
+            }
+
+            var user = await _userManager.FindByNameAsync(userName);
+
+            if (user == null) 
+            { 
+                return NotFound($"{userName} was not found");
+            }
+
+            var comments = await _commentRepository.GetUserCommentAsync(userName);
+            var commentDto = comments.Select(s => s.ToCommentDto()).ToList();
+            return Ok(commentDto);
+        }
 
 
         [HttpGet("{id}")]
