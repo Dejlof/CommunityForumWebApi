@@ -45,7 +45,7 @@ namespace CommunityForumApi.Controllers
 
             if (user == null) 
             { 
-                return NotFound();
+                return Unauthorized();
             }
             var posts = await _postRepository.GetMyPostsAsync(user);
             var postDto = posts.Select(s => s.ToPostDto()).ToList();

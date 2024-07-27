@@ -40,9 +40,19 @@ namespace CommunityForumApi.Repository
             return await _context.Comments.Include(a=> a.AppUser).ToListAsync();
         }
 
+
+
+
         public async Task<Comment?> GetByIdAsync(int id)
         {
             return await _context.Comments.Include(a=>a.Id).FirstOrDefaultAsync(c => c.Id == id);
+        }
+
+        public async Task<List<Comment>> GetMyCommentAsync(string userName)
+        {
+            return await _context.Comments.Include(a=> a.AppUser).
+                Where(a=>a.AppUser.UserName == userName).
+                ToListAsync();
         }
 
         public async Task<Comment?> UpdateAsync(int id, UpdateCommentDto updateDto)

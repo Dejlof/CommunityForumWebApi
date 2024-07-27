@@ -35,6 +35,23 @@ namespace CommunityForumApi.Controllers
             return Ok(commentDto);
         }
 
+        [HttpGet("currentuser")]
+        [Authorize]
+        public async Task<IActionResult> GetMyComments() { 
+            var user = User.GetUsername();
+
+            if (user == null) 
+            {
+                return Unauthorized();
+            }
+
+            var comments = await _commentRepository.GetMyCommentAsync(user);
+            var commentDto = comments.Select(s=>s.ToCommentDto()).ToList(); 
+            return Ok(commentDto);  
+        }
+
+
+
         [HttpGet("{id}")]
         [Authorize]
         public async Task<IActionResult> GetById(int id)
