@@ -6,6 +6,7 @@ using CommunityForumApi.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace CommunityForumApi.Controllers
 {
@@ -35,6 +36,27 @@ namespace CommunityForumApi.Controllers
             var postDto = posts.Select(s => s.ToPostDto()).ToList();
             return Ok(postDto);
         }
+
+        [HttpGet("current-user")]
+        [Authorize]
+        public async Task <IActionResult> GetMyPost()
+        {
+            var user = User.GetUsername();
+
+            if (user == null) 
+            { 
+                return NotFound();
+            }
+            var posts = await _postRepository.GetMyPostsAsync(user);
+            var postDto = posts.Select(s => s.ToPostDto()).ToList();
+            return Ok(postDto);
+
+        }
+
+
+
+
+
 
         [HttpGet("{id}")]
         [Authorize]

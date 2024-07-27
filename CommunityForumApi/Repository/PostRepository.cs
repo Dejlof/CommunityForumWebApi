@@ -4,6 +4,7 @@ using CommunityForumApi.Interface;
 using CommunityForumApi.Models;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace CommunityForumApi.Repository
 {
@@ -49,6 +50,14 @@ namespace CommunityForumApi.Repository
                 ThenInclude(s => s.AppUser)
                 .Include(s => s.AppUser).FirstOrDefaultAsync(c=>c.Id == id);
             
+        }
+
+        public async Task<List<Post>> GetMyPostsAsync(string userName)
+        {
+           return await _context.Posts.Include(s=> s.Comments).
+                ThenInclude(s=> s.AppUser).
+                Include(s=>s.AppUser).
+                Where(s=>s.AppUser.UserName == userName).ToListAsync();
         }
 
         public async Task<bool> PostExists(int id)

@@ -6,7 +6,7 @@ namespace CommunityForumApi.Interface
     public interface IPostRepository
     {
         Task<List<Post>> GetAllPostsAsync(); 
-
+        Task<List<Post>> GetMyPostsAsync(string userName);
         Task <Post?> GetByIdAsync(int id);
 
         Task<Post?> CreatePostAsync (Post postModel);
